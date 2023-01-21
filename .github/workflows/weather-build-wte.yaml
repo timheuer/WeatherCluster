@@ -24,9 +24,9 @@ jobs:
             - uses: azure/docker-login@v1
               name: Login to container registry
               with:
-                client-id: ${{ secrets.AZURE_CLIENT_ID }}
-                subscription-id: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
-                tenant-id: ${{ secrets.AZURE_TENANT_ID }}
+                login-server: ${{ env.AZURE_CONTAINER_REGISTRY }}.azurecr.io
+                username: ${{ secrets.ACR_USER }}
+                password: ${{ secrets.ACR_PASSWORD }}
 
             - name: Build and push container image to registry
               run: dotnet publish ${{ env.PROJECT_FILE }} -c Release -r linux-x64 -p:PublishProfile=DefaultContainer -p:ContainerImageTag=${{ github.sha }} --no-self-contained -p:ContainerRegistry=${{ env.AZURE_CONTAINER_REGISTRY }}.azurecr.io -bl -p:UseAppHost=false
@@ -42,7 +42,7 @@ jobs:
             - buildImage
         steps:
             - uses: actions/checkout@v3
-            - uses: azure/login@v1.4.3
+            - uses: azure/login@v1
               name: Azure login
               with:
                 client-id: ${{ secrets.AZURE_CLIENT_ID }}
