@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: tim-weather-api
-        image: mysuperfunservice.azurecr.io/tim-weather-api
+        image: myhappfunservice2.azurecr.io/tim-weather-api
         ports:
         - containerPort: 80
           protocol: TCP
