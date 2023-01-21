@@ -72,6 +72,6 @@ jobs:
         with:
           namespace: 'default'
           manifests: |
-             appmanifest.yaml
+             appmanifest_wte.yaml
           images: '${{ secrets.registry_wte }}.azurecr.io/${{ secrets.repository }}:${{ github.sha }}'
           pull-images: false
