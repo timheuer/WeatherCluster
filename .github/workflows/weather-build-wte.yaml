@@ -1,4 +1,4 @@
-name: "Build-DeployAKS-WTE""
+name: "Build-DeployAKS-WTE"
 "on":
     push:
         branches:
