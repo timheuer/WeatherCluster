@@ -8,6 +8,7 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{820B724F-E054-434A-857A-8E7C79E0273C}"
 	ProjectSection(SolutionItems) = preProject
 		..\..\appmanifest.yaml = ..\..\appmanifest.yaml
+		..\..\appmanifest_wte.yaml = ..\..\appmanifest_wte.yaml
 	EndProjectSection
 EndProject
 Global
