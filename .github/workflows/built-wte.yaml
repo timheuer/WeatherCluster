@@ -36,8 +36,8 @@ jobs:
         uses: azure/docker-login@v1
         with:
             login-server: ${{ env.CONTAINER_REGISTRY_LOGIN_SERVER }}
-            username: ${{ secrets.mysuperfunservice_USERNAME_8275 }}
-            password: ${{ secrets.mysuperfunservice_PASSWORD_8275 }}
+            username: ${{ secrets.mysuperfunservice2_USERNAME_BF2C }}
+            password: ${{ secrets.mysuperfunservice2_PASSWORD_BF2C }}
       
       - name: Build and push container image to registry
         run: dotnet publish ${{ env.PROJECT_FILE }} -c Release -r linux-x64 -p:PublishProfile=DefaultContainer -p:ContainerImageTag=${{ github.sha }} --no-self-contained -p:ContainerRegistry=${{ env.CONTAINER_REGISTRY_LOGIN_SERVER }} -bl -p:UseAppHost=false
